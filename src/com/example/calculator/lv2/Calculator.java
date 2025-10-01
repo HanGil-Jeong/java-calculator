@@ -34,14 +34,14 @@ public class Calculator {
     }
 
     public List<Integer> getResults() {
-        return results;
+        return this.results;
     }
 
     public void setResults(int i, int newValue) {
-        results.set(i, newValue);
+        this.results.set(i, newValue);
     }
 
     public void remove() {
-        results.remove(0);
+        this.results.remove(0);
     }
 }
