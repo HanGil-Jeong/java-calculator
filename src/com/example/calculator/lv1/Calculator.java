@@ -21,6 +21,10 @@ public class Calculator {
                 try {
                     System.out.print("첫 번째 숫자를 입력하세요: ");
                     firstNumber = sc.nextInt();
+                    if (firstNumber < 0) {
+                        System.out.println("양수를 입력해주세요.");
+                        continue;
+                    }
                     break;
                 } catch (InputMismatchException e) {
                     System.out.println("숫자만 입력 가능합니다.");
@@ -43,11 +47,16 @@ public class Calculator {
                 try {
                     System.out.print("두 번째 숫자를 입력하세요: ");
                     secondNumber = sc.nextInt();
+                    if (secondNumber < 0) {
+                        System.out.println("양수를 입력해주세요.");
+                        continue;
+                    }
 
                     if (operator.equals("/") && secondNumber == 0) {
                         System.out.println("0으로 나눌 수 없습니다.");
                         continue;
                     }
+
                     break;
                 } catch (InputMismatchException e) {
                     System.out.println("숫자만 입력 가능합니다.");
