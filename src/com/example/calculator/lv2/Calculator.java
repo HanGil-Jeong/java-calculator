@@ -1,53 +1,47 @@
 package com.example.calculator.lv2;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Calculator {
 
-    // 결과 저장 - 캡슐화 컬렉션 타입
-    ArrayList<Integer> results = new ArrayList<>();
+    private List<Integer> results = new ArrayList<>();
+    private int result;
 
-    // 게터
-    public ArrayList<Integer> getResults() {
+    public void calculator(int firstNumber, int secondNumber, String operator) {
+        switch (operator) {
+            case "+":
+                result = firstNumber + secondNumber;
+                results.add(result);
+                break;
+
+            case "-":
+                result = firstNumber - secondNumber;
+                results.add(result);
+                break;
+
+            case "*":
+                result = firstNumber * secondNumber;
+                results.add(result);
+                break;
+
+            case "/":
+                result = firstNumber / secondNumber;
+                results.add(result);
+                break;
+        }
+        System.out.println(firstNumber + " " + operator + " " + secondNumber + " = " + this.result);
+    }
+
+    public List<Integer> getResults() {
         return results;
     }
 
-    // 세터
-    public void setResult(ArrayList<Integer> results) {
-        this.results = results;
+    public void setResults(int i, int newValue) {
+        results.set(i, newValue);
     }
 
-    // 기능 : 사칙연산 수행
-    public void sum(int num1, int num2, char operation) {
-        int result = num1 + num2;
-        results.add(result);
-        System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
-    }
-
-    public void sub(int num1, int num2, char operation) {
-        int result = num1 - num2;
-        results.add(result);
-        System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
-    }
-
-    public void mul(int num1, int num2, char operation) {
-        int result = num1 * num2;
-        results.add(result);
-        System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
-    }
-
-    public void div(int num1, int num2, char operation) {
-        // 산술 예외 처리
-        try {
-            int result = num1 / num2;
-            results.add(result);
-            System.out.println(num1 + " " + operation + " " + num2 + " = " + result);
-        } catch (ArithmeticException e) {
-            System.out.println("0으로 나눌 수 없습니다");
-        }
-    }
-
-    public void removeList(Integer removeResult) {
-        results.remove(removeResult);
+    public void remove() {
+        results.remove(0);
     }
 }
