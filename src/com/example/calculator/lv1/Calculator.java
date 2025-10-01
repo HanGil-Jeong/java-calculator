@@ -6,8 +6,8 @@ import java.util.Scanner;
 public class Calculator {
     public static void main(String[] args) {
 
-        int firstNumber = 0;
-        int secondNumber = 0;
+        int firstNumber;
+        int secondNumber;
         int result;
         String operator;
         String exit = "";
