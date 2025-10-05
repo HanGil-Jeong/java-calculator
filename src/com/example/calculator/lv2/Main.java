@@ -94,7 +94,7 @@ public class Main {
 
                 // 계산 수정
                 case 2:
-                    List<Integer> resultList= calculator.getResults();
+                    List<Integer> resultList = calculator.getResults();
                     System.out.println("results = " + resultList);
                     System.out.print("수정할 값의 Index를 입력하세요: ");
                     index = sc.nextInt();
